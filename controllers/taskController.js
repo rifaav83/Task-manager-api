@@ -39,7 +39,8 @@ exports.updateTask = (req, res) => {
   }
 
   task.title = req.body.title || task.title;
-  task.status = req.body.status || task.status;
+  task.status = req.body.status || task.status;      
+
 
   writeTasks(tasks);
   res.json(task);
@@ -52,5 +53,5 @@ exports.deleteTask = (req, res) => {
   tasks = tasks.filter(t => t.id !== id);
   writeTasks(tasks);
 
-  res.json({ message: "Task deleted" });
+  res.json({ message: "Task deleted" });  
 };
